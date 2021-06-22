@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContentDetail = () => {
     return (
-        <div className="col-md-8 ftco-animate">
+        <div className="col-md-8">
             <p>
                 <img src="images/ximage_7.jpg.pagespeed.ic.-DCO26D4X9.jpg" alt=""
                      className="img-fluid"/>

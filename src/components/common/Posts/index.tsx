@@ -1,6 +1,6 @@
 const Posts = () => {
     return (
-        <section className="ftco-section ftco-no-pb ftco-no-pt">
+        <section className="">
             <div className="container">
                 <div className="row">
                     <div className="col-md-7 order-md-last d-flex align-items-stretch">
@@ -9,7 +9,7 @@ const Posts = () => {
                         <div className="img w-100 img-2 ml-md-2"
                              style={{backgroundImage: 'url(images/about-2.jpg)'}}/>
                     </div>
-                    <div className="col-md-5 wrap-about py-md-5 ftco-animate">
+                    <div className="col-md-5 wrap-about py-md-5">
                         <div className="heading-section pr-md-5">
                             <h2 className="mb-4">Ecoverde Real Estate</h2>
                             <p>A small river named Duden flows by their place and supplies it with the necessary

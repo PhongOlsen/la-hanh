@@ -1,6 +1,6 @@
 const HappyClient = ({content, userPicture, userName, officeUser}: any) => {
     return (
-        <div className="item">
+        <div className="item col-md-4">
             <div className="testimony-wrap py-4">
                 <div className="text">
                     <span className="fa fa-quote-left"/>

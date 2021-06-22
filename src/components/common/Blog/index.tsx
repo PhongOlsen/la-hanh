@@ -1,6 +1,9 @@
+import {useHistory} from "react-router-dom";
+import {BLOG_DETAIL} from "../../../action/constants";
 const Blog = ({createdAt, title, picture}: any) => {
+    const history = useHistory();
     return (
-        <div className="col-md-3 d-flex ftco-animate">
+        <div onClick={() => history.push(BLOG_DETAIL)} className="col-md-3 d-flex">
             <div className="blog-entry justify-content-end">
                 <div className="text">
                     <span className="block-20 img"

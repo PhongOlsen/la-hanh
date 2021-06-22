@@ -1,6 +1,6 @@
 const WorkFlow = ({index, title, content}: any) => {
     return (
-        <div className="col-md-3 d-flex align-self-stretch ftco-animate">
+        <div className="col-md-3 d-flex align-self-stretch">
             <div className="media block-6 services services-2">
                 <div className="media-body py-md-4 text-center">
                     <div className="icon mb-1 d-flex align-items-center justify-content-center">

@@ -1,7 +1,10 @@
+import { useHistory } from 'react-router-dom';
+import {PROPERTY_DETAIL} from "../../../action/constants";
 const Property = ({typeProperties = 'Sale', picture, price, area, userPicture, userName, time, oldPrice, title, address}: any) => {
+    const history = useHistory();
     return (
-        <div className="item">
-            <div className="property-wrap ftco-animate">
+        <div onClick={() => history.push(PROPERTY_DETAIL)} className="item col-md-4">
+            <div className="property-wrap">
                 <span className="img" style={{backgroundImage: `url(${picture})`}}>
                     <div className="rent-sale">
                         <span className={typeProperties === 'Sale' ? 'sale' : 'rent'}>
@@ -18,7 +21,7 @@ const Property = ({typeProperties = 'Sale', picture, price, area, userPicture, u
                 </span>
                 <div className="text">
                     <ul className="property_list">
-                        <li><span className="flaticon-floor-plan"/>{area} m2</li>
+                        <li><span className=""/>{area} m2</li>
                     </ul>
                     <h3>{title}</h3>
                     <span className="location">{address}</span>

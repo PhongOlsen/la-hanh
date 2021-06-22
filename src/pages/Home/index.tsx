@@ -5,7 +5,6 @@ import Properties from "../../components/page/Home/components/Properties";
 import AddressProperties from "../../components/page/Home/components/AddressProperties";
 import FeaturedProperties from "../../components/page/Home/components/FeaturedProperties";
 import Posts from "../../components/common/Posts";
-import Achievements from "../../components/page/Home/components/Achievements";
 import HappyClients from "../../components/page/Home/components/HappyClients";
 import OurAgents from "../../components/page/Home/components/OurAgents";
 import Blogs from "../../components/page/Home/components/Blogs";
@@ -16,17 +15,22 @@ import {FIRESTORE_PROPERTIES} from "../../action/constants";
 const Home = () => {
 
     useEffect(() => {
-
         const test = async () => {
             try {
-                const response = await firestore.collection(FIRESTORE_PROPERTIES).startAfter(4).limit(5);
+                const response = await firestore.collection(FIRESTORE_PROPERTIES).orderBy('id').startAfter(0).limit(5);
+                const result = await response.get();
                 console.log(response);
+                console.log(result);
             } catch (e) {
                 console.log(e)
             }
         }
         test();
     }, []);
+
+    useEffect(() => {
+        window.scroll(0,0)
+    },[]);
 
     return (
         <>
@@ -43,7 +47,7 @@ const Home = () => {
             <AddressProperties/>
             <FeaturedProperties/>
             <Posts/>
-            <Achievements/>
+            {/*<Achievements/>*/}
             <HappyClients/>
             <OurAgents/>
             <Blogs/>

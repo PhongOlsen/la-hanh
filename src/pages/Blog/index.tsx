@@ -1,8 +1,13 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Banner from "../../components/common/Banner";
 import Blogs from "../../components/page/Home/components/Blogs";
 
 const Blog = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner
@@ -10,7 +15,7 @@ const Blog = () => {
                 title={'BLOG'}
                 content={'Blog'}
             />
-            <div style={{marginTop:'100px'}}>
+            <div style={{marginTop: '100px'}}>
                 <Blogs subheading={false} paniganate={true}/>
             </div>
         </>

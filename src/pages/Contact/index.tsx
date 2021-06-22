@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ContactForm from "../../components/page/Contacts/components/ContactForm";
 import ContactInfor from "../../components/page/Contacts/components/ContactInfor";
-import Map from "../../components/page/Contacts/components/Map";
 import Banner from "../../components/common/Banner";
 
 const Contact = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner
@@ -16,7 +20,6 @@ const Contact = () => {
                 <div className="container">
                     <ContactForm/>
                     <ContactInfor/>
-                    <Map/>
                 </div>
             </section>
         </>

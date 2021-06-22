@@ -1,9 +1,14 @@
 import Banner from "../../components/common/Banner";
 import Posts from "../../components/common/Posts";
-import Achievements from "../../components/page/Home/components/Achievements";
 import HappyClients from "../../components/page/Home/components/HappyClients";
+import {useEffect} from "react";
 
 const About = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner
@@ -12,7 +17,7 @@ const About = () => {
                 content={'About'}
             />
             <Posts/>
-            <Achievements/>
+            {/*<Achievements/>*/}
             <HappyClients/>
         </>
     )

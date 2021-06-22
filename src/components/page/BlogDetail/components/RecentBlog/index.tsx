@@ -3,7 +3,7 @@ import RecentBlogItem from "./components/RecentBlogItem";
 
 const RecentBlog = () => {
     return (
-        <div className="sidebar-box ftco-animate">
+        <div className="sidebar-box">
             <h3>Recent Blog</h3>
             <RecentBlogItem
                 picture={'images/ximage_1.jpg.pagespeed.ic.vmQWwyI747.jpg'}

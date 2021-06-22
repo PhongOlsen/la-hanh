@@ -14,7 +14,7 @@ const Banner = ({btnProperties, title, content, labelBtn, picture, title2}: any)
                                 <p className="btn btn-primary py-3 px-4">{labelBtn}</p>
                             </div>
                         </div> :
-                        <div className="col-md-12 ftco-animate pb-0 text-center">
+                        <div className="col-md-12 pb-0 text-center">
                             <p className="breadcrumbs">
                                 <span className="mr-2">
                                     <span>Home<i className="fa fa-chevron-right"/>

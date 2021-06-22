@@ -3,7 +3,7 @@ const Achievements = () => {
         <section className="ftco-counter img" id="section-counter">
             <div className="container">
                 <div className="row pt-md-5">
-                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap">
                         <div className="block-18 py-5 mb-4">
                             <div className="text text-border d-flex align-items-center">
                                 <strong className="number" data-number={1000}>0</strong>
@@ -11,7 +11,7 @@ const Achievements = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap">
                         <div className="block-18 py-5 mb-4">
                             <div className="text text-border d-flex align-items-center">
                                 <strong className="number" data-number={2500}>0</strong>
@@ -19,7 +19,7 @@ const Achievements = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap">
                         <div className="block-18 py-5 mb-4">
                             <div className="text text-border d-flex align-items-center">
                                 <strong className="number" data-number={500}>0</strong>
@@ -27,7 +27,7 @@ const Achievements = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap ftco-animate">
+                    <div className="col-md-6 col-lg-3 justify-content-center counter-wrap">
                         <div className="block-18 py-5 mb-4">
                             <div className="text d-flex align-items-center">
                                 <strong className="number" data-number={67}>0</strong>

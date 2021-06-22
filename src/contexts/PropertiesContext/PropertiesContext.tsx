@@ -1,6 +1,5 @@
 import {getProperties} from "../../action/property";
-
-const PropertiesContext = ({children}: any) => {
+export const PropertiesContext = ({children}: any) => {
     const doGetProperties = (currentPage: any, itemsPerPage: any) => {
         try {
             const response = getProperties(currentPage, itemsPerPage);
@@ -10,4 +9,3 @@ const PropertiesContext = ({children}: any) => {
         }
     }
 }
-export default PropertiesContext;

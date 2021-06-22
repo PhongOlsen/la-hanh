@@ -8,9 +8,9 @@ const Properties = ({paniganate}: any) => {
             <div className="container">
                 <Subheading sub={'What we offer'} text={'Featured Properties'} subColor={'#24a148'}
                             textColor={'rgba(0,0,0,.8)'}/>
-                <div className="row ftco-animate">
+                <div className="row">
                     <div className="col-md-12">
-                        <div className="carousel-properties owl-carousel">
+                        <div className="row">
                             <Property
                                 typeProperties={'Sale'}
                                 picture={'images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg'}

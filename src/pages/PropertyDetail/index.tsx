@@ -1,11 +1,16 @@
 import Banner from "../../components/common/Banner";
-import React from "react";
+import React, {useEffect} from "react";
 import VideoProperty from "../../components/page/Property-Detail/components/VideoProperty";
 import Features from "../../components/page/Property-Detail/components/Features";
 import Description from "../../components/page/Property-Detail/components/Description";
 import Navbar from "../../components/page/Property-Detail/components/Navbar";
 
 const PropertyDetail = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner

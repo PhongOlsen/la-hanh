@@ -2,7 +2,7 @@ import React from "react";
 
 const CategoryFilter = () => {
     return (
-        <div className="sidebar-box ftco-animate">
+        <div className="sidebar-box">
             <div className="categories">
                 <h3>Categories</h3>
                 <li><span>Residences <span>(12)</span></span></li>

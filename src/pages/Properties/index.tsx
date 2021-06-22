@@ -1,9 +1,14 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Banner from "../../components/common/Banner";
 import Search from "../../components/common/Search";
 import Properties from "../../components/page/Home/components/Properties";
 
 const PropertiesPage = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner

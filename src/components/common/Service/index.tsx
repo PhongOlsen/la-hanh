@@ -1,6 +1,6 @@
 const Service = ({icon, title, content} : any) => {
     return (
-        <div className="col-md-3 d-flex align-items-stretch ftco-animate">
+        <div className="col-md-3 d-flex align-items-stretch">
             <div className="media block-6 services services-bg d-block text-center px-4 py-5">
                 <div className="icon d-flex justify-content-center align-items-center"><span
                     className={icon}/></div>

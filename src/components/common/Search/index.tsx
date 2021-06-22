@@ -4,7 +4,7 @@ const Search = ({bgSearch}: any) => {
             <div className="container">
                 <div className="row">
                     <div className="col-md-12">
-                        <div className="search-wrap-1 ftco-animate p-4">
+                        <div className="search-wrap-1 p-4">
                             <form action="#" className="search-property-1">
                                 <div className="row">
                                     <div className="col-lg align-items-end">

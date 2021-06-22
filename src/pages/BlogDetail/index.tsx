@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import Banner from "../../components/common/Banner";
 import ContentDetail from "../../components/page/BlogDetail/components/ContentDetail";
 import InputForm from "../../components/page/BlogDetail/components/InputForm";
@@ -6,6 +6,11 @@ import CategoryFilter from "../../components/page/BlogDetail/components/Category
 import RecentBlog from "../../components/page/BlogDetail/components/RecentBlog";
 
 const BlogDetail = () => {
+
+    useEffect(() => {
+        window.scroll(0,0)
+    },[]);
+
     return (
         <>
             <Banner

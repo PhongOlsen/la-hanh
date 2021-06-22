@@ -6,7 +6,7 @@ const SpecialServices = () => {
         <section className="ftco-section">
             <div className="container">
                 <div className="row justify-content-center">
-                    <div className="col-md-12 text-center heading-section ftco-animate mb-5">
+                    <div className="col-md-12 text-center heading-section mb-5">
                         <span className="subheading">Services</span>
                         <h2 className="mb-3">Special Services</h2>
                     </div>

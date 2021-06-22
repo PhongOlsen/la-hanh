@@ -1,7 +1,13 @@
 import Banner from "../../components/common/Banner";
 import OurAgents from "../../components/page/Home/components/OurAgents";
+import {useEffect} from "react";
 
 const Agents = () => {
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
     return (
         <>
             <Banner
