@@ -8,10 +8,13 @@ import {
     CONTACT,
     PROPERTIES,
     SERVICES,
-    HOME
+    HOME, EMAIL
 } from "../../../action/constants";
+import {useContext} from "react";
+import {UserContext} from "../../../contexts/UserContext";
 
 const Header = () => {
+    const {user} = useContext(UserContext);
     return (
         <nav className="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
             <div className="container">
@@ -29,6 +32,7 @@ const Header = () => {
                         <li className="nav-item"><NavLink to={PROPERTIES} className="nav-link">Properties</NavLink></li>
                         <li className="nav-item"><NavLink to={BLOG} className="nav-link">Blog</NavLink></li>
                         <li className="nav-item"><NavLink to={CONTACT} className="nav-link">Contact</NavLink></li>
+                        {user?.role === 'admin' ? <li className="nav-item"><NavLink to={EMAIL} className="nav-link">Email</NavLink></li> : ''}
                     </ul>
                 </div>
             </div>

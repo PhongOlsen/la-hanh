@@ -8,30 +8,52 @@ import Posts from "../../components/common/Posts";
 import HappyClients from "../../components/page/Home/components/HappyClients";
 import OurAgents from "../../components/page/Home/components/OurAgents";
 import Blogs from "../../components/page/Home/components/Blogs";
-import {useEffect} from "react";
-import {firestore} from "../../services/firebase/firebase";
-import {FIRESTORE_PROPERTIES} from "../../action/constants";
+import {useContext, useEffect} from "react";
+import {PropertiesContext} from "../../contexts/PropertiesContext";
+import {AddressPropertyContext} from "../../contexts/AddressPropertyContext";
+import {UserContext} from "../../contexts/UserContext";
+import {useHistory} from "react-router-dom";
+import {PROPERTIES, PROPERTY_DETAIL} from "../../action/constants";
 
 const Home = () => {
+    const history = useHistory();
+    const {doGetProperties, properties, doGetPropertiesByUser, setProperty} = useContext(PropertiesContext);
+    const {doGetAddress, address} = useContext(AddressPropertyContext);
+    const {doGetUsers, users} = useContext(UserContext);
 
+    /*eslint-disable */
     useEffect(() => {
-        const test = async () => {
-            try {
-                const response = await firestore.collection(FIRESTORE_PROPERTIES).orderBy('id').startAfter(0).limit(5);
-                const result = await response.get();
-                console.log(response);
-                console.log(result);
-            } catch (e) {
-                console.log(e)
-            }
-        }
-        test();
-    }, []);
-
-    useEffect(() => {
-        window.scroll(0,0)
+        doGetProperties((properties: any) => {
+            console.log(properties);
+        });
     },[]);
 
+    useEffect(() => {
+        doGetAddress((address: any) => {
+            console.log(address);
+        })
+    },[]);
+
+    useEffect(() => {
+        doGetUsers((users: any) => {
+            console.log(users);
+        })
+    },[])
+    /*eslint-enable */
+
+    useEffect(() => {
+        window.scroll(0, 0)
+    }, []);
+
+    const getPropertiesByUser = (user: any) => {
+        if (user?.id) doGetPropertiesByUser(user?.id);
+        history.push(PROPERTIES);
+    }
+
+    const getPropertyDetail = (item: any) => {
+        setProperty(item);
+        history.push(PROPERTY_DETAIL);
+    }
     return (
         <>
             <Banner
@@ -43,13 +65,13 @@ const Home = () => {
             />
             <Search bgSearch={true}/>
             <Services/>
-            <Properties/>
-            <AddressProperties/>
+            <Properties getPropertyDetail={getPropertyDetail} properties={properties} />
+            <AddressProperties address={address}/>
             <FeaturedProperties/>
             <Posts/>
             {/*<Achievements/>*/}
             <HappyClients/>
-            <OurAgents/>
+            <OurAgents getPropertiesByUser={getPropertiesByUser} users={users}/>
             <Blogs/>
         </>
     )

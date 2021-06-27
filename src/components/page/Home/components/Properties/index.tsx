@@ -2,7 +2,8 @@ import Subheading from "../../../../common/Subheading";
 import Property from "../../../../common/Property";
 import Paniganate from "../../../../common/Paniganate";
 
-const Properties = ({paniganate}: any) => {
+const Properties = ({properties, paniganate, getPropertyDetail}: any) => {
+
     return (
         <section className="ftco-section">
             <div className="container">
@@ -11,39 +12,23 @@ const Properties = ({paniganate}: any) => {
                 <div className="row">
                     <div className="col-md-12">
                         <div className="row">
-                            <Property
-                                typeProperties={'Sale'}
-                                picture={'images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg'}
-                                price={'300,000'}
-                                area={'200'}
-                                userPicture={'images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg'}
-                                userName={'La Thi Hanh'}
-                                time={'2 weeks ago'}
-                                title={'The Blue Sky Home'}
-                                address={'Oakland'}
-                            />
-                            <Property
-                                typeProperties={'Sale'}
-                                picture={'images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg'}
-                                price={'300,000'}
-                                area={'300'}
-                                userPicture={'images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg'}
-                                userName={'La Thi Hanh'}
-                                time={'2 weeks ago'}
-                                title={'The Blue Sky Home'}
-                                address={'Oakland'}
-                            />
-                            <Property
-                                typeProperties={'Sale'}
-                                picture={'images/xwork-1.jpg.pagespeed.ic.kJbcYAoUnI.jpg'}
-                                price={'300,000'}
-                                area={'400'}
-                                userPicture={'images/xperson_1.jpg.pagespeed.ic.P4pHl6glbj.jpg'}
-                                userName={'La Thi Hanh'}
-                                time={'2 weeks ago'}
-                                title={'The Blue Sky Home'}
-                                address={'Oakland'}
-                            />
+                            {properties?.map((item: any, index: any) => {
+                                return (
+                                    <div onClick={() => getPropertyDetail(item)} key={index} className="item col-md-4">
+                                        <Property
+                                            typeProperties={item?.typeProperties}
+                                            picture={item?.picture}
+                                            price={item?.price}
+                                            area={item?.area}
+                                            userPicture={item?.userPicture}
+                                            userName={item?.userName}
+                                            time={item?.time}
+                                            title={item?.title}
+                                            address={item?.address}
+                                        />
+                                    </div>
+                                )
+                            })}
                         </div>
                     </div>
                 </div>

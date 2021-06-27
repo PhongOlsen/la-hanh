@@ -1,7 +1,7 @@
 import Subheading from "../../../../common/Subheading";
 import OurAgent from "../../../../common/OurAgent";
 
-const OurAgents = () => {
+const OurAgents = ({users, getPropertiesByUser}: any) => {
     return (
         <section className="ftco-section ftco-agent">
             <div className="container">
@@ -9,10 +9,13 @@ const OurAgents = () => {
                     <Subheading sub={'AGENTS'} text={'Our Agents'} subColor={'#24a148'} textColor={'rgba(0,0,0,.8)'}/>
                 </div>
                 <div className="row">
-                    <OurAgent avatar={'images/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg'} userName={'Carlos Henderson'} quantityProperties={10}/>
-                    <OurAgent avatar={'images/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg'} userName={'Carlos Henderson'} quantityProperties={10}/>
-                    <OurAgent avatar={'images/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg'} userName={'Carlos Henderson'} quantityProperties={10}/>
-                    <OurAgent avatar={'images/xteam-1.jpg.pagespeed.ic.XdGG32VxIm.jpg'} userName={'Carlos Henderson'} quantityProperties={10}/>
+                    {users?.slice(0, 3).map((item:any, index: any) => {
+                        return (
+                            <div style={{cursor: 'pointer'}} onClick={() => getPropertiesByUser(item)} key={index}>
+                                <OurAgent position={item?.position}  avatar={item?.avatar} userName={item?.userName} quantityProperties={10}/>
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
         </section>

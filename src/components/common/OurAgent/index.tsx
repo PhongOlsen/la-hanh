@@ -1,4 +1,4 @@
-const OurAgent = ({avatar, userName, quantityProperties}: any) => {
+const OurAgent = ({avatar, userName, quantityProperties, position}: any) => {
     return (
         <div className="col-md-3">
             <div className="agent">
@@ -7,7 +7,7 @@ const OurAgent = ({avatar, userName, quantityProperties}: any) => {
                          alt="Colorlib Template"/>
                     <div className="desc">
                         <h3>{userName}</h3>
-                        <p className="h-info"><span className="location">Listing</span> <span
+                        <p className="h-info"><span className="location">{position}</span> <span
                             className="details">{quantityProperties} Properties</span></p>
                     </div>
                 </div>

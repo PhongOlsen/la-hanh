@@ -7,7 +7,7 @@ import {
     AGENTS,
     BLOG,
     BLOG_DETAIL,
-    CONTACT,
+    CONTACT, EMAIL,
     HOME,
     PROPERTIES,
     PROPERTY_DETAIL,
@@ -21,10 +21,22 @@ import Contact from "../../pages/Contact";
 import PropertiesPage from "../../pages/Properties";
 import BlogDetail from "../../pages/BlogDetail";
 import PropertyDetail from "../../pages/PropertyDetail";
+import {useContext, useEffect} from "react";
+import {UserContext} from "../../contexts/UserContext";
+import Loading from "../../components/layout/Loading";
+import Email from "../../pages/Email";
 
 const HomeLayout = () => {
+    const {isLoading, doGetUser, user} = useContext(UserContext);
+    /*eslint-disable */
+    useEffect(() => {
+        if (localStorage.getItem('token')) doGetUser(localStorage.getItem('token'))
+    },[]);
+    /*eslint-enable */
+
     return (
         <>
+            <Loading isLoading={isLoading}/>
             <Header/>
             <Switch>
                 <Route path="/" exact>
@@ -39,6 +51,8 @@ const HomeLayout = () => {
                 <Route path={CONTACT} exact component={Contact}/>
                 <Route path={BLOG_DETAIL} exact component={BlogDetail}/>
                 <Route path={PROPERTY_DETAIL} exact component={PropertyDetail}/>
+                <Route path={EMAIL} exact component={Email}/>
+                {user?.role === 'admin' ? <Route path={EMAIL} exact component={Email}/> : ''}
             </Switch>
             <Footer/>
         </>

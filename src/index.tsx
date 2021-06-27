@@ -5,6 +5,10 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Router, withRouter, Route} from 'react-router-dom';
 import {createBrowserHistory} from 'history';
+import {PropertiesContextProvider} from "./contexts/PropertiesContext";
+import {AddressPropertyContextProvider} from "./contexts/AddressPropertyContext";
+import {UserContextProperty} from "./contexts/UserContext";
+import {ContactContextProvider} from "./contexts/ContactContext";
 
 const AppRootWithRouter = withRouter(App);
 
@@ -28,9 +32,17 @@ export default PrivateRoute;
 
 ReactDOM.render(
     <React.StrictMode>
-        <Router history={customHistory}>
-            <AppRootWithRouter/>
-        </Router>
+        <UserContextProperty>
+            <PropertiesContextProvider>
+                <AddressPropertyContextProvider>
+                    <ContactContextProvider>
+                        <Router history={customHistory}>
+                            <AppRootWithRouter/>
+                        </Router>
+                    </ContactContextProvider>
+                </AddressPropertyContextProvider>
+            </PropertiesContextProvider>
+        </UserContextProperty>
     </React.StrictMode>
     ,
     document.getElementById('root')
